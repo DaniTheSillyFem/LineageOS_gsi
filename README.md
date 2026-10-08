@@ -45,6 +45,10 @@ treble_app is now used from your compiled version.
 First, make sure that Java 17 is set as your default. How to do this on [Arch Linux](https://wiki.archlinux.org/title/Java#List_compatible_Java_environments_installed)  
 The compilation itself,
 
+```
+bash treble_app/build.sh
+```
+
 ### Use ccache to speed up Android rebuilds
 
 You can add these lines to the ~/.bashrc or ~/.zshrc file to avoid typing them again:
