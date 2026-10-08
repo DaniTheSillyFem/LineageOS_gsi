@@ -1,5 +1,5 @@
 Русский | [English](README.md)
-### Чтобы приступить к компиляции неофициальной LineageOS 23.2 GSI вместе с патчами,
+### Чтобы приступить к компиляции неофициальной LineageOS 24.0 GSI вместе с патчами,
 Вам нужно будет ознакомиться с [Git and Repo](https://source.android.com/source/using-repo.html), [Как собрать GSI](https://github.com/phhusson/treble_experimentations/wiki/How-to-build-a-GSI%3F), а также с темой на 4pda по [Сборке Android из исходников](https://4pda.to/forum/index.php?showtopic=209610&view=findpost&p=6112304)
 
 ### Создайте директорию
@@ -15,17 +15,21 @@ cd LineageOS
 ### Чтобы инициализировать локальный репозиторий, выполните эту команду:
 
 ```bash
-repo init -u https://github.com/LineageOS/android.git -b lineage-23.2 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
 ```
 
 ### Склонируйте манифест, чтобы добавить необходимые зависимости для gsi:
 
-    git clone https://github.com/MisterZtr/treble_manifest.git .repo/local_manifests -b lineage-23.2
+    git clone https://github.com/DaniTheSillyFem/treble_manifest.git .repo/local_manifests -b lineage-24.0
 
 ### После этого синхронизируйте исходный код, выполнив эту команду:
 
 ```bash
 repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j4
+```
+или, если используется Crave:
+```bash
+/opt/crave/resync.sh
 ```
 
 ### После синхронизации исходного кода, примените патчи:
@@ -61,7 +65,7 @@ export CCACHE_MAXSIZE=50G # 50 GB
  ```
 . build/envsetup.sh
 ccache -M 50G -F 0
-breakfast lineage_arm64_bvNE-bp4a-userdebug
+breakfast lineage_arm64_bvNE-cp2a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
@@ -70,7 +74,7 @@ make systemimage -j$(nproc --all)
  ```
 . build/envsetup.sh
 ccache -M 50G -F 0
-breakfast lineage_arm64_bvN4-bp4a-userdebug
+breakfast lineage_arm64_bvN4-cp2a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
@@ -79,7 +83,7 @@ make systemimage -j$(nproc --all)
  ```
 . build/envsetup.sh
 ccache -M 50G -F 0
-breakfast lineage_arm64_bgNE-bp4a-userdebug
+breakfast lineage_arm64_bgNE-cp2a-userdebug
 make systemimage -j$(nproc --all)
  ```
  
@@ -88,7 +92,7 @@ make systemimage -j$(nproc --all)
  ```
 . build/envsetup.sh
 ccache -M 50G -F 0
-breakfast lineage_arm64_bgN4-bp4a-userdebug
+breakfast lineage_arm64_bgN4-cp2a-userdebug
 make systemimage -j$(nproc --all)
  ```
 
