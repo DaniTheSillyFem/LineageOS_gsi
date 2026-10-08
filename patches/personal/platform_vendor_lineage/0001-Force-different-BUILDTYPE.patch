@@ -1,7 +1,7 @@
 From c65a0f8efceb1d86d5318a989005099227f0794f Mon Sep 17 00:00:00 2001
 From: MisterZtr <andey2004586@gmail.com>
 Date: Sun Dec 8 12:50:53 2024 +0300
-Subject: [PATCH] Add more types to build
+Subject: [PATCH] Force different BUILDTYPE
 
 diff --git a/config/version.mk b/config/version.mk
 index eae8efbb..552d4f27 100644
